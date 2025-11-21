@@ -1,0 +1,15 @@
+/Users/pearljam/Desktop/MacPractice/FirstPractice/bin/Debug/net10.0/FirstPractice
+/Users/pearljam/Desktop/MacPractice/FirstPractice/bin/Debug/net10.0/FirstPractice.deps.json
+/Users/pearljam/Desktop/MacPractice/FirstPractice/bin/Debug/net10.0/FirstPractice.runtimeconfig.json
+/Users/pearljam/Desktop/MacPractice/FirstPractice/bin/Debug/net10.0/FirstPractice.dll
+/Users/pearljam/Desktop/MacPractice/FirstPractice/bin/Debug/net10.0/FirstPractice.pdb
+/Users/pearljam/Desktop/MacPractice/FirstPractice/obj/Debug/net10.0/FirstPractice.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pearljam/Desktop/MacPractice/FirstPractice/obj/Debug/net10.0/FirstPractice.AssemblyInfoInputs.cache
+/Users/pearljam/Desktop/MacPractice/FirstPractice/obj/Debug/net10.0/FirstPractice.AssemblyInfo.cs
+/Users/pearljam/Desktop/MacPractice/FirstPractice/obj/Debug/net10.0/FirstPractice.csproj.CoreCompileInputs.cache
+/Users/pearljam/Desktop/MacPractice/FirstPractice/obj/Debug/net10.0/FirstPractice.dll
+/Users/pearljam/Desktop/MacPractice/FirstPractice/obj/Debug/net10.0/refint/FirstPractice.dll
+/Users/pearljam/Desktop/MacPractice/FirstPractice/obj/Debug/net10.0/FirstPractice.pdb
+/Users/pearljam/Desktop/MacPractice/FirstPractice/obj/Debug/net10.0/FirstPractice.genruntimeconfig.cache
+/Users/pearljam/Desktop/MacPractice/FirstPractice/obj/Debug/net10.0/ref/FirstPractice.dll
+/Users/pearljam/Desktop/MacPractice/FirstPractice/obj/Debug/net10.0/FirstPractice.sourcelink.json
