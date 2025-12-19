@@ -1,9 +1,10 @@
-using FirstPractice;
-
-class Program
+namespace FirstPractice
 {
-    static void Main()
+    internal class Program
     {
-        DishTest.Run();
+        static void Main(string[] args)
+        {
+            DishTest.Run();
+        }
     }
 }
