@@ -157,8 +157,8 @@ namespace FirstPractice{
                 Thread.Sleep(dish.CookTime * 1000);
                 //最简单的稳健的 判断某个key在不在字典里的方法,如果存在TryGetValue返回true,并且把这个key的value储存在count里
                 //如果不存在 count为int的默认值0;
-               player.DishBag.TryGetValue(dish, out int count);
-               player.DishBag[dish] = 1 + count;
+                player.DishBag.TryGetValue(dish, out int count);
+                player.DishBag[dish] = 1 + count;
 
                 Console.WriteLine($"{dish.Name} is ready! 🍽️");
             }
