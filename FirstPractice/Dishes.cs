@@ -151,7 +151,7 @@ namespace FirstPractice{
 
         public class Kitchen
         {
-            public void CookDish(Player player, DishMaker dish)
+            public void CookDish(Player player, DishMaker dish) //用到什么方法就传什么方法
             {
                 Console.WriteLine($"Cooking {dish.Name} please wait {dish.CookTime} seconds......");
                 Thread.Sleep(dish.CookTime * 1000);
