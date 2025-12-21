@@ -40,7 +40,11 @@ namespace FirstPractice{
             };   
             public static int GetPrice(Material material)
             {
-                return MaterialCost[material];
+                if(!MaterialCost.TryGetValue(material, out int price))
+                {
+                    throw new InvalidOperationException($"No price defined for {material}");
+                }
+                return price;
             }
 
             public static void ShowPriceMap()
@@ -68,9 +72,9 @@ namespace FirstPractice{
                 SpoilTime = spoilTime;
                 Materials = materials;
             }
-                public int Cost()
+                public decimal Cost()
                 {
-                    int total = 0;
+                    decimal total = 0m;
                     foreach (var item in Materials)
                     {
                         total += MaterialPrice.GetPrice(item);
@@ -78,10 +82,74 @@ namespace FirstPractice{
                     return total;                 
                 }
                 
-                public double SellPrice()
+                public decimal SellPrice()
                 {
-                    return Cost() * 1.5;
+                    return Cost() * 1.5m;
                 }
         }
+
+        public class Player
+        {
+            public decimal Gold = 500m;
+            public Dictionary<Material, int> MaterialBag = new();
+            public Dictionary<DishMaker, int> DishBag = new();
+
+            //一个一个买材料,并非一口气把需要的都买了,好判断背包里是不是存在,是叠加还是重新创建一个
+            public void BuyMaterial(Material material, int amount)
+            {
+                //先判断是不是足够金币
+                int SingleCost = MaterialPrice.GetPrice(material) * amount;
+                if (Gold < SingleCost)
+                {
+                    Console.WriteLine("You dont have enough Gold!!");
+                    return;
+                }
+                Gold -= SingleCost;
+                //再判断背包里是不是有重复材料
+                if (MaterialBag.ContainsKey(material))
+                {
+                    MaterialBag[material] += amount;
+                }
+                else
+                {
+                    MaterialBag[material] = amount;
+                }
+                
+                Console.WriteLine($"You bought {material} -- {amount}");
+            }
+
+            public void ShowPlayerInfo()
+            {
+                Console.WriteLine("=====You are looking into your bag....======");
+                Console.WriteLine($"You have {Gold} Gold");
+                Console.WriteLine($"=====You have Materials:=====");
+                foreach (var itemM in MaterialBag)
+                {
+                    Console.WriteLine($"{itemM.Key} -- {itemM.Value}");
+                }
+
+                Console.WriteLine($"=====You have Dishes:=====");
+                foreach (var itemD in DishBag)
+                {
+                    Console.WriteLine($"{itemD.Key} -- {itemD.Value}");
+                }
+            }
+
+            public void SellDishes()
+            {
+                decimal SoldGold = 0m;
+                foreach (var dish in DishBag)
+                {
+                    SoldGold += dish.Key.SellPrice() * dish.Value;
+                }
+                Gold += SoldGold;
+                DishBag.Clear();
+                Console.WriteLine($"Sold all dishes, earned {SoldGold} gold!!");
+            }
+
+        }
+
+
     }
+
 }
