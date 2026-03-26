@@ -4,7 +4,7 @@ namespace FirstPractice
     {
         static void Main(string[] args)
         {
-            CheckClockState.Check();
+            ChestCheck.Check();
         }
     }
 }
